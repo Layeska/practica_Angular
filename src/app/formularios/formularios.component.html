@@ -1,0 +1,13 @@
+<p>formularios works!</p>
+
+<form action="" [formGroup]="form">
+    <input type="text" name="" id="" placeholder="Nombre" formControlName = "name" />
+    {{form.get('name')?.value}}
+    
+    <input type="checkbox" name="" id="" formControlName="isCheked">
+    {{ form.get('isCheked')?.value}}
+    
+    <button [disabled]="form.get('name')?.errors">Enviar Data</button>
+</form>
+
+{{form.value | json}}

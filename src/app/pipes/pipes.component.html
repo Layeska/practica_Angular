@@ -1,0 +1,26 @@
+<p>pipes works!</p>
+<div>
+    <span>TitleCase</span>
+    {{name | titlecase}}
+
+    {{name}}
+
+    <span>UpperCase</span>
+    {{name | uppercase}}
+
+    <span>LoweCase</span>
+
+    {{name | lowercase}}
+</div>
+
+<div>
+    <p>Dates</p>
+    {{date | date }}
+    <br>
+    {{date | date: 'short' }}
+</div>
+
+<p>Estado de Transaccion: {{estado | estados }}</p>
+
+<button (click)="changeState()">Cambiar estado</button>
+

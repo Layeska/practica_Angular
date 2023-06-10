@@ -1,0 +1,23 @@
+<p>estructural works!</p>
+
+<div class="error" *ngIf="isError">
+    <p>Mensaje de Error 🥲</p>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quod nam, sed deserunt impedit asperiores explicabo velit corporis pariatur iusto ducimus officiis. Ullam possimus beatae nihil, modi obcaecati voluptates nemo.</span>
+</div>
+
+<button (click)="showError()">Mostrar error</button>
+
+<!-- Array -->
+<ul>
+    <li *ngFor="let section of sections">{{section}}</li>
+</ul>
+
+<!-- Objeto -->
+<ul>
+    <li *ngFor="let section of section1">{{section.name}} ({{section.duration}} sg)</li>
+</ul>
+
+<ng-template #noContent> Contenido no disponible</ng-template>
+
+
+<ng-container *ngTemplateOutlet="isError ? noContent : null"></ng-container>
