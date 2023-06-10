@@ -20,5 +20,15 @@ export class TodosComponent {
     })
 
     this.todoService.getById(5).subscribe(res => console.log("comments: ", res))
+
+    this.todoService.getPost().subscribe(res => console.log("Res del Post: ", res))
+
+    this.todoService.posts$.subscribe(res => {
+      console.log("Post$: ", res)
+    })
+  }
+
+  updatePost() {
+    this.todoService.postSource.next('información!!!')
   }
 }

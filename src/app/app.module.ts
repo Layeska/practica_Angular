@@ -13,7 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { VentaModule } from './venta/venta.module';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { TodosComponent } from './todos/todos.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http'
     CompraModule,
     VentaModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
